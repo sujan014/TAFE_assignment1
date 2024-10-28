@@ -1,0 +1,148 @@
+#root{
+  width: 60%;
+  margin: 0 auto;  
+}
+.flex-vertical{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav-bar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;  
+  height: 100px;  
+  background-color: lightgray;
+}
+.nav-link{
+  text-decoration: none;
+}
+.nav-link>h1{
+  color: rgb(0, 38, 100);  
+}
+.main-body{  
+  background-color: #F0f0f0;
+  padding-top: 10px;
+}
+.course-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+}
+.list-card{
+  border: 2px solid rgb(0, 38, 100);
+  width: 40%;
+  height: 400px;
+  border-radius: 10px;
+  margin: 10px 10px;
+  padding: 10px 10px;
+  flex-grow: 1;
+}
+img{
+  max-width: 50%;
+  height: auto;
+}
+.btn_style1{
+  background-color: #1166ee;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 10px;  
+}
+.btn_style1:hover{
+  background-color: teal;
+  cursor: pointer;
+}
+.btn-text1{
+  color: white;
+  font-weight: bold;
+}
+.btn_style2{
+  background-color: crimson;
+  color: white;
+  margin: 10px 30px;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 10px;
+}
+.btn_style3{
+  background-color: lightgray;
+  color: white;
+  margin: 10px 30px;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 10px;
+}
+.loading-text{
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  color: red;
+}
+/* .loading{
+  color: gray;
+  height: 60px;
+  width: 60px;
+  border: 20px solid black;
+  border-radius: 50%;
+} */
+
+@media (max-width: 900px){
+  #root{
+    width: 80%;
+    margin: 0 auto;  
+  }
+  .list-card{
+    width: 90%;
+  }
+  .loading-text{
+    font-size: 1.5rem;
+  }
+}
+.dots::after{
+  content: '';
+  display: inline;  
+  animation-name: dots;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;    
+}
+
+@keyframes dots{
+  0% { content: '' }
+  10% { content: '.' }
+  20% { content: '..' }
+  30% { content: '...' }
+  40% { content: '....' }
+  50% { content: '.....' }
+  60% { content: '......' }
+  70% { content: '.......' }
+  80% { content: '........' }
+  90% { content: '.........' }
+  100% { content: '..........' }
+}
+
+
+.loader{
+  color: gray;
+  height: 60px;
+  width: 60px;
+  border: 20px solid #fefefe; /* Light grey*/
+  border-top: 20px solid #0c0aad;  
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+
+  margin: 30px 0
+}
+
+@keyframes spin{
+  0% {
+    transform: rotate(0deg);  
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
