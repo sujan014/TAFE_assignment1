@@ -14,8 +14,7 @@ export default function ListCard({course}){
                         fontWeight: '500'
                     }}
                 >
-                    <h2>{course.title}</h2>
-                    <p>Id : {course.id}</p>
+                    <h2>{course.title}</h2>                    
                     <p>hours : {course.hours}</p>
                 </div>
                 <img
@@ -25,14 +24,14 @@ export default function ListCard({course}){
             </div>                        
             <p>Description: </p>
             <p>{course.description}</p>
-            <button className="btn_style1">
-                <Link 
+            <Link 
                     className="nav-link"
-                    to={`/course/${course.id}`}
-                >
-                    <span className="btn-text1">More</span>
-                </Link>
-            </button>
+                    to={`/course/${course._id}`}
+            >
+                <button className="btn_style1" >
+                    <span className="btn-text1">More</span>                
+                </button>
+            </Link>
         </div>
     )
 }

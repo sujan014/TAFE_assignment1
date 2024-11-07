@@ -19,7 +19,7 @@ export default function Course(){
             let result = await axios.get(`${ServerURL}/courses/${id}`);
             console.log(result);            
             if (result.status === 200){
-                setCourse(result.data.data);
+                setCourse(result.data);
                 setErrState(false);
             } else {
                 alert(result.err);
@@ -52,11 +52,9 @@ export default function Course(){
                     style={{
                         width: '70%',
                         margin: '20px auto',
-                        border: '1px solid black',
-                        padding: '0 20px'
+                        border: '1px solid black',                        
                     }}
-                >                
-                    {/* <p><strong>Id: {id}</strong></p> */}
+                >
                     <h2
                         style={{
                             textAlign: 'center',
@@ -65,22 +63,31 @@ export default function Course(){
                     >
                         Title: {course.title}
                     </h2>
-                    <p>Hours: {course.hours}</p>
-                    <br />
-                    <p
-                        style={{
-                            fontSize: '1.3rem'
-                        }}
+                    <hr />
+                    <div
+                        style={{padding: '0 20px'}}
                     >
-                        Course Description: {course.description}
-                    </p>
-                    <p>Modules: </p>
-                    {course.modules.map(module => (
-                        <button className="btn_style2">
-                            {module}
-                        </button>
-                    ))}
-                    <div>
+                        <p>Hours: {course.hours}</p>
+                        <p>Category: {course.category}</p>
+                        <p>Instructor: {course.instructor}</p>
+                    </div>
+                    <hr />
+                    <div style={{padding: '0 20px'}}>
+                        <p
+                            style={{
+                                fontSize: '1.3rem'
+                            }}
+                        >
+                            Course Description: {course.description}
+                        </p>
+                        <p>Modules: </p>
+                        {course.modules.map(module => (
+                            <button className="btn_style2">
+                                {module}
+                            </button>
+                        ))}
+                    </div>
+                    <div style={{padding: '10px 20px'}}>
                         <button 
                             className="btn_style1 btn-text1"
                             style={{

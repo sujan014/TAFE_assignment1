@@ -70,7 +70,7 @@ export default function Home(){
                     {                        
                         myCourses.map( course => (
                             <ListCard 
-                                key={course.id}
+                                key={course._id}
                                 course={course} 
                             />
                         ))
